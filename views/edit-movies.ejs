@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ürünü Düzenle</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <%- include('blocks/header') -%>
+  <div class="edit-page">
+    <h3>Edit product</h3>
+    <form action="/movies/edit/<%= movie.id %>" method="POST" class="edit-form">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="<%= movie.name %>" required><br>
+    
+        <label for="image">Image Url:</label>
+        <input type="text" name="image" value="<%= movie.image %>" required><br>
+    
+        <label for="genre">Genre:</label>
+        <input type="text" name="genre" value="<%= movie.genre %>" required><br>
+    
+        <label for="raiting">Raiting:</label>
+        <input type="text" name="raiting" value="<%= movie.raiting %>" required><br>
+    
+        <label for="year">Year:</label>
+        <input type="text" name="year" value="<%= movie.year %>" required><br>
+
+        <label for="isFavorite">Is Favorite?</label>
+        <input class="check-input" type="checkbox" name="isFavorite" <% if (movie.isFavorite) { %> checked <% } %>><br>
+      </div>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+</body>
+</html>

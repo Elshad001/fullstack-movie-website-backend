@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Yeni Ürün Ekle</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+  <%- include('blocks/header') -%>
+    <div class="add-page">
+      <h3>Add new movie</h3>
+      <form action="/movies/add" method="POST" class="add-form">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" name="name" required><br>
+
+          <label for="image">Image Url:</label>
+          <input type="text" name="image" required><br>
+
+          <label for="genre">Genre:</label>
+          <input type="text" name="genre" required><br>
+
+          <label for="raiting">Raiting:</label>
+          <input type="text" name="raiting" required><br>
+
+          <label for="year">Year:</label>
+          <input type="text" name="year" required><br>
+        </div>
+        <button type="submit">Add</button>
+      </form>
+    </div>
+</body>
+
+</html>

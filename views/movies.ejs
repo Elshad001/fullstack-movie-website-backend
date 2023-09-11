@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ürün Yönetimi</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <div class="movies-page">
+        <%- include('blocks/header') -%>
+            <ul class="movies">
+                <% movies.forEach(movie=> { %>
+                    <li class="movies">
+                        <div class="movies-content">
+                            <div class="movies-name">
+                                <span>
+                                    <%= movie.name %>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn">
+                                <a href="/movies/edit/<%= movie.id %>">Edit</a>
+                            </button>
+                            <button class="btn">
+                                <a href="/movies/delete/<%= movie.id %>">Delete</a>
+                             </button>
+                        </div>
+                    </li>
+                    <% }); %>
+            </ul>
+    </div>
+</body>
+
+</html>
