@@ -61,8 +61,8 @@ app.get('/movies', (req, res) => {
 
 
   app.post('/movies/add', (req, res) => {
-    const { name,image,genre,raiting,year} = req.body;
-    const sql = 'INSERT INTO allMovies (name,image,genre,raiting,isFavorite) VALUES (?, ?, ?, ?, ?,?)';
+    const { name,image,genre,raiting,year,isFavorite} = req.body;
+    const sql = 'INSERT INTO allMovies (name,image,genre,raiting,year,isFavorite) VALUES (?, ?, ?, ?, ?,?)';
   
     db.query(sql, [ name,image,genre,raiting,year,0], (err, result) => {
       if (err) {
